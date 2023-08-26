@@ -3,7 +3,7 @@ extends Node2D
 const MAX_COLLECTABLES = 15 # Max amount of cherries
 
 var collectables = 0 # Cherries collected so far
-var Cherry = preload("res://Collectables/Cherry.tscn") # Cherry scene
+var Cherry = preload("res://Levels/Level Utils/Collectables/Cherry.tscn") # Cherry scene
 
 func _on_timer_timeout():
 	

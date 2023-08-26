@@ -58,7 +58,7 @@ func _on_hurtbox_body_entered(body):
 
 func _on_hitbox_body_entered(body):
 	if body.name == "Player":
-		body.health -= 3
+		body.take_damage(3)
 		death()
 		
 func death():

@@ -9,11 +9,16 @@ signal player_idle
 signal player_ran
 signal player_hit
 signal player_death
+signal game_paused
 
 var health = 10
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func _process(delta):
+	if(Input.is_action_just_pressed("pause")):
+		game_paused.emit()
 
 func _physics_process(delta):
 	# Add the gravity.
