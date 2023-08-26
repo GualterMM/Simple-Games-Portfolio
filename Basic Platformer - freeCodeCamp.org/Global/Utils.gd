@@ -25,3 +25,6 @@ func loadGame():
 				Game.gold = current_line["gold"]
 		
 		file.close()
+
+func back_to_menu():
+	get_tree().change_scene_to_file("res://main.tscn")
