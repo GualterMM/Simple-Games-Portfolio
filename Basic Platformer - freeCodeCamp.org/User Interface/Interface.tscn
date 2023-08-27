@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp0gycxosaxyn"]
+
+[ext_resource type="PackedScene" uid="uid://b4t3yyox1sfyh" path="res://User Interface/Counters/GoldCounter.tscn" id="1_nh8o3"]
+[ext_resource type="PackedScene" uid="uid://bu3xg1tlg6x16" path="res://User Interface/Counters/LifeCounter.tscn" id="2_kg1e5"]
+
+[node name="Interface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GoldContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -136.0
+offset_top = 16.0
+offset_right = -64.0
+offset_bottom = 48.0
+grow_horizontal = 0
+alignment = 1
+
+[node name="GoldCounter" parent="GoldContainer" instance=ExtResource("1_nh8o3")]
+layout_mode = 2
+
+[node name="LifeContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 16.0
+offset_right = 136.0
+offset_bottom = 48.0
+
+[node name="LifeCounter" parent="LifeContainer" instance=ExtResource("2_kg1e5")]
+layout_mode = 2

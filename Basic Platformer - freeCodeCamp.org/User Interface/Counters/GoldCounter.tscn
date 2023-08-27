@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4t3yyox1sfyh"]
+
+[ext_resource type="PackedScene" uid="uid://pt7rcvr5jdwn" path="res://User Interface/Counters/Counter.tscn" id="1_mx3w5"]
+[ext_resource type="Texture2D" uid="uid://bgw7darnjn76p" path="res://Assets/coins.png" id="2_bvl53"]
+
+[node name="GoldCounter" instance=ExtResource("1_mx3w5")]
+
+[node name="Icon" parent="." index="0"]
+offset_left = -24.0
+texture = ExtResource("2_bvl53")
+
+[node name="Label" parent="." index="1"]
+metadata/_edit_lock_ = true

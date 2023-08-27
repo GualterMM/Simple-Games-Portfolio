@@ -11,8 +11,6 @@ signal player_hit
 signal player_death
 signal game_paused
 
-var health = 10
-
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -55,10 +53,9 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func take_damage(dmg):
-	health -= dmg
-	if health <= 0:
-		queue_free()
+	Game.playerHP -= dmg
+	if Game.playerHP <= 0:
+		death()
 
-
-func _on_player_idle():
-	pass # Replace with function body.
+func death():
+	self.queue_free()

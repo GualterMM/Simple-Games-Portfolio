@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ig04str1q4hu"]
+
+[ext_resource type="FontFile" uid="uid://dcc5wbn5oyit1" path="res://User Interface/Theme/Fonts/GAMERIA.ttf" id="1_ytbeh"]
+
+[resource]
+default_font = ExtResource("1_ytbeh")
+default_font_size = 20

@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://npqd0e7q1oir"]
 
 [ext_resource type="Texture2D" uid="uid://bln5ud0rgkxk1" path="res://Sunny-land-assets-files/PNG/spritesheets/frog-idle.png" id="1_uvodc"]
-[ext_resource type="Script" path="res://Frog.gd" id="1_y4rgj"]
+[ext_resource type="Script" path="res://Enemies/Frog.gd" id="1_y4rgj"]
 [ext_resource type="Texture2D" uid="uid://cygp0i5ytjsym" path="res://Sunny-land-assets-files/PNG/spritesheets/frog-jump.png" id="2_i2r75"]
 [ext_resource type="Texture2D" uid="uid://bdlce0v3ki2fp" path="res://Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-1.png" id="2_qk7jt"]
 [ext_resource type="Texture2D" uid="uid://b7lp0uw8p1aur" path="res://Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-2.png" id="3_w4302"]
