@@ -5,7 +5,7 @@ const MAX_RANGE = 150.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Timer.timeout.connect(_on_timer_timeout)
+	pass
 
 
 func _on_timer_timeout():
