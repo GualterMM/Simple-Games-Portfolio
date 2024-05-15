@@ -25,7 +25,6 @@ func increment_experience(number: float):
 		experience_updated.emit(current_experience, target_experience)
 		level_up.emit(current_level)
 		
-	print("Current exp: " + str(current_experience) + ", Target exp: " + str(target_experience) + ", Level: " + str(current_level))
 
 
 func on_experience_vial_collected(number: float):
