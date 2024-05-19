@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="2d Survivors Course"
-run/main_scene="res://scenes/main/main.tscn"
+config/name="CPG 2024 2.0 (Survivors puro)"
+run/main_scene="res://scenes/main_menu/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -1,16 +1,39 @@
-[gd_scene load_steps=8 format=3 uid="uid://80a7a4mv65vl"]
+[gd_scene load_steps=12 format=3 uid="uid://80a7a4mv65vl"]
 
-[ext_resource type="Texture2D" uid="uid://clxn6tdpuhnab" path="res://scenes/game_object/basic_enemy/tile_0124.png" id="1_2u0gl"]
 [ext_resource type="Script" path="res://scenes/game_object/basic_enemy/basic_enemy.gd" id="1_21ss4"]
 [ext_resource type="PackedScene" uid="uid://bootsakog56hr" path="res://scenes/component/health_component.tscn" id="2_3gt6c"]
 [ext_resource type="PackedScene" uid="uid://bdpmlxlb286as" path="res://scenes/component/vial_drop_component.tscn" id="3_b017l"]
 [ext_resource type="PackedScene" uid="uid://bm7nbvhmo8lhv" path="res://scenes/component/hurt_box_component.tscn" id="4_10crk"]
+[ext_resource type="Texture2D" uid="uid://dn56867vtajut" path="res://scenes/game_object/basic_enemy/sprites/rat-2.png" id="6_iw3ku"]
+[ext_resource type="Texture2D" uid="uid://jniab71r25gd" path="res://scenes/game_object/basic_enemy/sprites/rat-3.png" id="7_44gn0"]
+[ext_resource type="Texture2D" uid="uid://cynova0rao4a7" path="res://scenes/game_object/basic_enemy/sprites/rat-4.png" id="8_7pbxq"]
+[ext_resource type="Texture2D" uid="uid://dw6bqsled83r5" path="res://scenes/game_object/basic_enemy/sprites/rat-5.png" id="9_42tgn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_blk1c"]
 radius = 12.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_2l3w2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_iw3ku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_44gn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7pbxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_42tgn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_p7vcg"]
-radius = 5.0
+radius = 8.0
 
 [node name="BasicEnemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 8
@@ -30,9 +53,10 @@ health_component = NodePath("../HealthComponent")
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_blk1c")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_2u0gl")
-offset = Vector2(0, -4)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2l3w2")
+frame_progress = 0.492578
+offset = Vector2(0, -14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)

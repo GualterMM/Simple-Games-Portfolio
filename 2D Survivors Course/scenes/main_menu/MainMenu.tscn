@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://d30rlds1v3yo5"]
+
+[ext_resource type="Script" path="res://scenes/main_menu/MainMenu.gd" id="1_s46kv"]
+[ext_resource type="Texture2D" uid="uid://d14ja8nypjjua" path="res://scenes/main_menu/main_menu.png" id="2_a5vhj"]
+[ext_resource type="AudioStream" uid="uid://c6rgg2to53r6e" path="res://assets/music/PreHistoryInBetween.wav" id="3_e5nba"]
+
+[node name="MainMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s46kv")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_e5nba")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_a5vhj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Jogar"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Sair"

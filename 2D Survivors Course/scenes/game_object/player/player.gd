@@ -6,6 +6,7 @@ const ACCELERATION_SMOOTHING = 20.0
 @onready var damage_interval_timer = $DamageIntervalTimer
 @onready var health_component = $HealthComponent
 @onready var health_bar_component = $HealthBarComponent
+@onready var animated_sprites = $AnimatedSprite2D
 
 var number_colliding_bodies = 0
 
@@ -21,6 +22,16 @@ func _process(delta):
 	var direction = movement_vector.normalized()
 	var target_velocity = direction * MAX_SPEED
 	velocity = velocity.lerp(target_velocity, 1.0 - exp(-delta * ACCELERATION_SMOOTHING))
+	
+	if target_velocity == Vector2.ZERO:
+		animated_sprites.play("default")
+	else:
+		animated_sprites.play("walk")
+		
+	if direction.x > 0:
+		animated_sprites.flip_h = false
+	elif direction.x < 0:
+		animated_sprites.flip_h = true
 	move_and_slide()
 
 
@@ -37,8 +48,6 @@ func check_deal_damage():
 	
 	health_component.damage(1)
 	damage_interval_timer.start()
-	
-	print(health_component.current_health)
 
 
 func on_body_entered(body: Node2D):
@@ -53,3 +62,7 @@ func on_body_exited(body: Node2D):
 func on_damage_interval_timer_timeout():
 	check_deal_damage()
 	
+
+func _on_bound_box_body_exited(body):
+	print("here")
+	health_component.damage(100)

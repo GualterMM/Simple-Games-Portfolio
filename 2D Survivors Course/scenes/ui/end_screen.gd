@@ -13,8 +13,8 @@ func _ready():
 	
 
 func set_defeat():
-	title_label.text = "Defeat!"
-	description_label.text = "You lost!"
+	title_label.text = "Derrota!"
+	description_label.text = "Você sucumbiu!"
 	
 
 func on_restart_button_pressed():

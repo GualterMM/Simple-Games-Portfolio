@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
-const MAX_SPEED = 40.0
-const CLOSE_DIS = 10.0
+const MIN_SPEED = 40.0
+const MAX_SPEED = 140.0
+const CLOSE_DIS = 5.0
 
 @onready var health_component: HealthComponent = $HealthComponent
+@onready var animated_sprite = $AnimatedSprite2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -11,7 +13,13 @@ func _process(_delta):
 	if (direction == null):
 		return
 	
-	velocity = direction * MAX_SPEED
+	animated_sprite.play("default")
+	if direction.x > 0:
+		animated_sprite.flip_h = true
+	elif direction.x < 0:
+		animated_sprite.flip_h = false
+	
+	velocity = direction * randi_range(MIN_SPEED, MAX_SPEED)
 	move_and_slide()
 
 

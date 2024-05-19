@@ -1,10 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmvlylcl11ahp"]
+[gd_scene load_steps=9 format=3 uid="uid://dmvlylcl11ahp"]
 
 [ext_resource type="Script" path="res://scenes/game_object/experience_vial/experience_vial.gd" id="1_6qs5y"]
-[ext_resource type="Texture2D" uid="uid://cxhikr80tww3u" path="res://scenes/game_object/experience_vial/experience_vial.png" id="2_nfj6p"]
+[ext_resource type="Texture2D" uid="uid://w7f2btxbsokw" path="res://scenes/game_object/experience_vial/sprites/coin-1.png" id="2_0e3mw"]
+[ext_resource type="Texture2D" uid="uid://njtj1gmwjkou" path="res://scenes/game_object/experience_vial/sprites/coin-2.png" id="3_kgbb5"]
+[ext_resource type="Texture2D" uid="uid://y6hu7c7oyre5" path="res://scenes/game_object/experience_vial/sprites/coin-3.png" id="4_pk35m"]
+[ext_resource type="Texture2D" uid="uid://ci54l1ilk57v2" path="res://scenes/game_object/experience_vial/sprites/coin-4.png" id="5_shfeq"]
+[ext_resource type="Texture2D" uid="uid://b5ucx8qjrwjy2" path="res://scenes/game_object/experience_vial/sprites/coin-5.png" id="6_2h1u8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nnpis"]
 radius = 16.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wmeuf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0e3mw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kgbb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pk35m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_shfeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2h1u8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="ExperienceVial" type="Node2D"]
 script = ExtResource("1_6qs5y")
@@ -16,7 +43,10 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_nnpis")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_nfj6p")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_wmeuf")
+frame = 3
+frame_progress = 0.23087
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
